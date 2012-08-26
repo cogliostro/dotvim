@@ -1,8 +1,11 @@
+" Pathogen calls
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+" Personal preferences
 syntax on
 set nocompatible
+set cursorline
 filetype plugin indent on
 set incsearch
 set hidden
@@ -12,10 +15,9 @@ set lines=40
 set autoindent
 set smartindent
 set columns=110
-set guifont=Menlo:h13
+set guifont=Inconsolata:h16
 let mapleader=','
 nmap <leader>. :b#<CR>
-
 
 " Set tab behaviour
 set ts=4 sts=4 sw=4 noexpandtab
