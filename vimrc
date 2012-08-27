@@ -3,6 +3,9 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 " Personal preferences
+colorscheme solarized
+set guioptions=-t
+call togglebg#map("<Leader>b")
 syntax on
 set nocompatible
 set cursorline
@@ -15,7 +18,7 @@ set lines=40
 set autoindent
 set smartindent
 set columns=110
-set guifont=Inconsolata:h16
+set guifont=Menlo:h15
 let mapleader=','
 nmap <leader>. :b#<CR>
 
