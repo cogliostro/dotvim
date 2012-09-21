@@ -1,10 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/Applications/MacVim.app/Contents/Resources/vim/runtime/indent'
-let g:netrw_dirhist_2='/Applications/MacVim.app/Contents/Resources/vim/runtime'
-let g:netrw_dirhist_3='/Users/jkr'
-let g:netrw_dirhist_4='/Users/jkr/Documents/html'
-let g:netrw_dirhist_5='/Users/jkr/Documents/Code'
-let g:netrw_dirhist_6='/Users/jkr/Documents/Code/textmate'
-let g:netrw_dirhist_7='/Users/jkr/Documents/Code/textmate/Applications'
-let g:netrw_dirhist_8='/Users/jkr/.oh-my-zsh/custom/example'
+let g:netrw_dirhist_cnt =0

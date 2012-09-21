@@ -4,8 +4,8 @@ call pathogen#helptags()
 
 " Personal preferences
 colorscheme solarized
+set background=dark
 set guioptions=-t
-call togglebg#map("<Leader>b")
 syntax on
 set nocompatible
 set cursorline
@@ -18,7 +18,7 @@ set lines=40
 set autoindent
 set smartindent
 set columns=110
-set guifont=Menlo:h15
+set guifont=Ubuntu\ Mono:h17
 let mapleader=','
 nmap <leader>. :b#<CR>
 
@@ -82,3 +82,27 @@ if has("autocmd")
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 endif
+
+function! HandleURL()
+  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;]*')
+  echo s:uri
+  if s:uri != ""
+    silent exec "!open '".s:uri."'"
+  else
+    echo "No URI found in line."
+  endif
+endfunction
+map <leader>w :call HandleURL()<cr>
+
+" use ghc functionality for haskell files
+au Bufenter *.hs compiler ghc
+
+" switch on syntax highlighting
+syntax on
+
+" enable filetype detection, plus loading of filetype plugins
+filetype plugin on
+
+" Configure browser for haskell_doc.vim
+let g:haddock_browser = "open"
+let g:haddock_browser_callformat = "%s %s"
