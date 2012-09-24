@@ -18,7 +18,7 @@ set lines=40
 set autoindent
 set smartindent
 set columns=110
-set guifont=Ubuntu\ Mono:h17
+set guifont=Menlo 12
 let mapleader=','
 nmap <leader>. :b#<CR>
 
