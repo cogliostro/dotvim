@@ -18,7 +18,7 @@ set lines=40
 set autoindent
 set smartindent
 set columns=110
-set guifont=Menlo 12
+set guifont=Menlo\ for\ Powerline\:h12
 let mapleader=','
 nmap <leader>. :b#<CR>
 
@@ -106,3 +106,9 @@ filetype plugin on
 " Configure browser for haskell_doc.vim
 let g:haddock_browser = "open"
 let g:haddock_browser_callformat = "%s %s"
+
+" Powerline options
+let g:Powerline_symbols = 'fancy'
+set laststatus=2
+let g:Powerline_theme="skwp"
+let g:Powerline_colorscheme="skwp"
