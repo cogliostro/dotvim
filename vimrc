@@ -20,8 +20,10 @@ set smartindent
 set columns=110
 set guifont=Menlo\ for\ Powerline\:h12
 let mapleader=','
+nmap <leader>t :Tlist<CR>
+nmap <leader>n :NERDTreeToggle<CR>
 nmap <leader>. :b#<CR>
-
+let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
 " Set tab behaviour
 set ts=4 sts=4 sw=4 noexpandtab
 
