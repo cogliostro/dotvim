@@ -3,7 +3,7 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 " Personal preferences
-colorscheme solarized
+colorscheme grb256
 set background=dark
 set guioptions=-t
 syntax on
@@ -18,7 +18,7 @@ set lines=40
 set autoindent
 set smartindent
 set columns=110
-set guifont=Menlo\ for\ Powerline\:h12
+set guifont=Monaco:h13
 let mapleader=','
 nmap <leader>t :Tlist<CR>
 nmap <leader>n :NERDTreeToggle<CR>
@@ -112,5 +112,5 @@ let g:haddock_browser_callformat = "%s %s"
 " Powerline options
 let g:Powerline_symbols = 'fancy'
 set laststatus=2
-let g:Powerline_theme="skwp"
-let g:Powerline_colorscheme="skwp"
+let g:Powerline_theme="default"
+let g:Powerline_colorscheme="default"
