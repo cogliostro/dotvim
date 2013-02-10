@@ -79,6 +79,7 @@ if has("autocmd")
   autocmd FileType html nnoremap <F5> :!open -a Safari %<CR><CR>
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
    
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
