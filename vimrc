@@ -13,7 +13,6 @@ filetype plugin indent on
 set incsearch
 set hidden
 set nu
-syntax enable
 set lines=40
 set autoindent
 set smartindent
