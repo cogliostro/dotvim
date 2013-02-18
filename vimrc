@@ -114,3 +114,4 @@ let g:Powerline_symbols = 'fancy'
 set laststatus=2
 let g:Powerline_theme="default"
 let g:Powerline_colorscheme="default"
+let g:miniBufExplMapCTabSwitchBufs = 1
