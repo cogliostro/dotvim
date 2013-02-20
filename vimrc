@@ -78,9 +78,12 @@ if has("autocmd")
   autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType html nnoremap <F5> :!open -a Safari %<CR><CR>
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType scss setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd FileType rb setlocal ts=2 sts=2 sw=2 expandtab
   autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
-   
+  autocmd FileType eruby.html setlocal ts=2 sts=2 sw=2 expandtab
+
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 endif
@@ -99,12 +102,6 @@ map <leader>w :call HandleURL()<cr>
 " use ghc functionality for haskell files
 au Bufenter *.hs compiler ghc
 
-" switch on syntax highlighting
-syntax on
-
-" enable filetype detection, plus loading of filetype plugins
-filetype plugin on
-
 " Configure browser for haskell_doc.vim
 let g:haddock_browser = "open"
 let g:haddock_browser_callformat = "%s %s"
@@ -115,3 +112,4 @@ set laststatus=2
 let g:Powerline_theme="default"
 let g:Powerline_colorscheme="default"
 let g:miniBufExplMapCTabSwitchBufs = 1
+

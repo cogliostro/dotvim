@@ -1,10 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/Users/jkr/Documents'
-let g:netrw_dirhist_2='/Users/jkr/Documents/Code/haskell'
-let g:netrw_dirhist_3='Documents'
-let g:netrw_dirhist_4='/Users/jkr/Desktop/tasks'
-let g:netrw_dirhist_5='/Users/jkr/Documents/Code/Rails'
-let g:netrw_dirhist_6='/Users/jkr/Documents/Code/Rails/tasks'
-let g:netrw_dirhist_7='/Users/jkr/Documents/Code/html'
-let g:netrw_dirhist_8='/Users/jkr/.vim'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/jkr/.vim'
+let g:netrw_dirhist_2='/Users/jkr/Documents/Code/html'
+let g:netrw_dirhist_3='/Users/jkr/Documents/Code/Rails/eksempel'
