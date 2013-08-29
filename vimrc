@@ -5,6 +5,8 @@ call pathogen#helptags()
 " Personal preferences
 colorscheme grb256
 set background=dark
+set encoding=utf-8
+let g:netrw_keepdir=0
 set guioptions=-t
 syntax on
 set nocompatible
@@ -113,3 +115,4 @@ let g:Powerline_theme="default"
 let g:Powerline_colorscheme="default"
 let g:miniBufExplMapCTabSwitchBufs = 1
 
+nnoremap <leader>h :!open -a Safari %<CR><CR>
