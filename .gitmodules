@@ -67,3 +67,6 @@
 [submodule "bundle/vimproc"]
 	path = bundle/vimproc
 	url = https://github.com/Shougo/vimproc.vim.git
+[submodule "bundle/easy-align"]
+	path = bundle/easy-align
+	url = https://github.com/junegunn/vim-easy-align.git

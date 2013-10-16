@@ -6,6 +6,7 @@ call pathogen#helptags()
 colorscheme grb256
 set background=dark
 set encoding=utf-8
+set cmdheight=1
 let g:netrw_keepdir=0
 set guioptions=-t
 syntax on
@@ -24,9 +25,8 @@ let mapleader=','
 nmap <leader>t :Tlist<CR>
 nmap <leader>n :NERDTreeToggle<CR>
 nmap <leader>. :b#<CR>
-map gn :bn<cr>
-map gp :bp<cr>
-map gd :bd<cr>  
+map <C-Tab> :bn<cr>
+map <S-C-Tab> :bp<cr>
 let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
 " Set tab behaviour
 set ts=4 sts=4 sw=4 noexpandtab
@@ -96,9 +96,28 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 endif
 
+function! HandleURL()
+  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;]*')
+  echo s:uri
+  if s:uri != ""
+    silent exec "!open '".s:uri."'"
+  else
+    echo "No URI found in line."
+  endif
+endfunction
+map <leader>w :call HandleURL()<cr>
+
+" use ghc functionality for haskell files
+au Bufenter *.hs compiler ghc
+
+" Configure browser for haskell_doc.vim
+let g:haddock_browser = "open"
+let g:haddock_browser_callformat = "%s -a Firefox %s"
+
 "
-" Places a module comment on top with --s sequence
+" Haskell settings
 "
+
 let s:width = 80
 
 function! HaskellModuleSection(...)
@@ -112,10 +131,7 @@ endfunction
 
 nmap <silent> --s "=HaskellModuleSection()<CR>gp
 
-"
-" Places a module comment on top with --h sequence
-"
-<BS>let s:width = 80
+let s:width = 80
 
 
 function! HaskellModuleHeader(...)
@@ -138,24 +154,6 @@ endfunction
 
 nmap <silent> --h "=HaskellModuleHeader()<CR>:0put =<CR>
 
-function! HandleURL()
-  let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;]*')
-  echo s:uri
-  if s:uri != ""
-    silent exec "!open '".s:uri."'"
-  else
-    echo "No URI found in line."
-  endif
-endfunction
-map <leader>w :call HandleURL()<cr>
-
-" use ghc functionality for haskell files
-au Bufenter *.hs compiler ghc
-
-" Configure browser for haskell_doc.vim
-let g:haddock_browser = "open"
-let g:haddock_browser_callformat = "%s -a Firefox %s"
-
 " Airline options
 set laststatus=2
 let g:airline_powerline_fonts=1
@@ -163,4 +161,4 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme="powerlineish"
 let g:airline#extensions#syntastic#enabled = 1
 
-nnoremap <leader>h :!open -a Safari %<CR><CR>
+nnoremap <leader>h :!open -a Firefox %<CR><CR>
