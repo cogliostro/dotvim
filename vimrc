@@ -85,10 +85,55 @@ if has("autocmd")
   autocmd FileType rb setlocal ts=2 sts=2 sw=2 expandtab
   autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
   autocmd FileType eruby.html setlocal ts=2 sts=2 sw=2 expandtab
+  
+  " Haskell customization
+  autocmd FileType haskell setlocal ts=8 expandtab sts=4 sw=4 smarttab shiftround nojoinspaces
 
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 endif
+
+"
+" Places a module comment on top with --s sequence
+"
+let s:width = 80
+
+function! HaskellModuleSection(...)
+    let name = 0 < a:0 ? a:1 : inputdialog("Section name: ")
+
+    return  repeat('-', s:width) . "\n"
+    \       . "--  " . name . "\n"
+    \       . "\n"
+
+endfunction
+
+nmap <silent> --s "=HaskellModuleSection()<CR>gp
+
+"
+" Places a module comment on top with --h sequence
+"
+<BS>let s:width = 80
+
+
+function! HaskellModuleHeader(...)
+    let name = 0 < a:0 ? a:1 : inputdialog("Module: ")
+    let note = 1 < a:0 ? a:2 : inputdialog("Note: ")
+    let description = 2 < a:0 ? a:3 : inputdialog("Describe this module: ")
+    
+    return  repeat('-', s:width) . "\n" 
+    \       . "-- | \n" 
+    \       . "-- Module      : " . name . "\n"
+    \       . "-- Note        : " . note . "\n"
+    \       . "-- \n"
+    \       . "-- " . description . "\n"
+    \       . "-- \n"
+    \       . repeat('-', s:width) . "\n"
+    \       . "\n"
+
+endfunction
+
+
+nmap <silent> --h "=HaskellModuleHeader()<CR>:0put =<CR>
 
 function! HandleURL()
   let s:uri = matchstr(getline("."), '[a-z]*:\/\/[^ >,;]*')
@@ -106,7 +151,7 @@ au Bufenter *.hs compiler ghc
 
 " Configure browser for haskell_doc.vim
 let g:haddock_browser = "open"
-let g:haddock_browser_callformat = "%s %s"
+let g:haddock_browser_callformat = "%s -a Firefox %s"
 
 " Powerline options
 let g:Powerline_symbols = 'fancy'
