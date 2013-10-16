@@ -19,11 +19,14 @@ set lines=40
 set autoindent
 set smartindent
 set columns=110
-set guifont=Monaco:h13
+set guifont=Monaco\ for\ Powerline:h13
 let mapleader=','
 nmap <leader>t :Tlist<CR>
 nmap <leader>n :NERDTreeToggle<CR>
 nmap <leader>. :b#<CR>
+map gn :bn<cr>
+map gp :bp<cr>
+map gd :bd<cr>  
 let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
 " Set tab behaviour
 set ts=4 sts=4 sw=4 noexpandtab
@@ -153,11 +156,11 @@ au Bufenter *.hs compiler ghc
 let g:haddock_browser = "open"
 let g:haddock_browser_callformat = "%s -a Firefox %s"
 
-" Powerline options
-let g:Powerline_symbols = 'fancy'
+" Airline options
 set laststatus=2
-let g:Powerline_theme="default"
-let g:Powerline_colorscheme="default"
-let g:miniBufExplMapCTabSwitchBufs = 1
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme="powerlineish"
+let g:airline#extensions#syntastic#enabled = 1
 
 nnoremap <leader>h :!open -a Safari %<CR><CR>
