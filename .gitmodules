@@ -64,3 +64,6 @@
 [submodule "bundle/ghcmod"]
 	path = bundle/ghcmod
 	url = https://github.com/eagletmt/ghcmod-vim.git
+[submodule "bundle/vimproc"]
+	path = bundle/vimproc
+	url = https://github.com/Shougo/vimproc.vim.git
