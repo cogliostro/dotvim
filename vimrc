@@ -22,6 +22,8 @@ set smartindent
 set columns=110
 set guifont=Monaco\ for\ Powerline:h13
 let mapleader=','
+nmap <leader>a :EasyAlign<CR>
+vmap <leader>a :EasyAlign!<CR>
 nmap <leader>t :Tlist<CR>
 nmap <leader>n :NERDTreeToggle<CR>
 nmap <leader>. :b#<CR>
@@ -153,6 +155,8 @@ endfunction
 
 
 nmap <silent> --h "=HaskellModuleHeader()<CR>:0put =<CR>
+
+let g:ghcmod_ghc_options = ['-idir1', '-idir2']
 
 " Airline options
 set laststatus=2
