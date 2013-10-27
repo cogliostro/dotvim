@@ -156,7 +156,11 @@ endfunction
 
 nmap <silent> --h "=HaskellModuleHeader()<CR>:0put =<CR>
 
+<<<<<<< HEAD
+let g:ghcmod_ghc_options = ['-idir1', '-idir2']
+=======
 let g:ghcmod_ghc_options = ['-fno-warn-type-defaults']
+>>>>>>> f35e7fa61b947fa24c67f7362ebc4a691c23af00
 
 " Airline options
 set laststatus=2
