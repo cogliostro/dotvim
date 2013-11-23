@@ -165,4 +165,17 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme="powerlineish"
 let g:airline#extensions#syntastic#enabled = 1
 
-nnoremap <leader>h :!open -a Firefox %<CR><CR>
+nnoremap <leader>h :!open %<CR><CR>
+
+autocmd BufWriteCmd *.html,*.css,*.gtpl :call Refresh_firefox()
+function! Refresh_firefox()
+  if &modified
+    write
+    silent !echo  'vimYo = content.window.pageYOffset;
+          \ vimXo = content.window.pageXOffset;
+          \ BrowserReload();
+          \ content.window.scrollTo(vimXo,vimYo);
+          \ repl.quit();'  |
+          \ nc -w 1 localhost 4242 2>&1 > /dev/null
+  endif
+endfunction
