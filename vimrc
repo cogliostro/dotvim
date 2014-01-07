@@ -82,6 +82,9 @@ if has("autocmd")
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
    
   " Customisations based on house-style (arbitrary)
+  autocmd BufEnter,BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+  autocmd FileType hs setlocal ts=4 sts=4 sw=4 expandtab smarttab shiftround nojoinspaces
+  autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType html nnoremap <F5> :!open -a Safari %<CR><CR>
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
@@ -179,3 +182,7 @@ function! Refresh_firefox()
           \ nc -w 1 localhost 4242 2>&1 > /dev/null
   endif
 endfunction
+
+" Synastic defaults
+let g:syntastic_check_on_open=1
+let g:syntastic_python_checkers=['pep8']
