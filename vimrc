@@ -96,6 +96,10 @@ if has("autocmd")
   
   " Haskell customization
   autocmd FileType haskell setlocal ts=8 expandtab sts=4 sw=4 smarttab shiftround nojoinspaces
+  autocmd FileType haskell nmap <C-c><C-l> :GhciRange<CR>
+  autocmd FileType haskell vmap <C-c><C-l> :GhciRange<CR>
+  autocmd FileType haskell nmap <C-c><C-f> :GhciFile<CR>
+  autocmd FileType haskell nmap <C-c><C-r> :GhciReload<CR>
 
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml

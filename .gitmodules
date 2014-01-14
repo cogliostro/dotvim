@@ -64,3 +64,6 @@
 [submodule "bundle/easy-align"]
 	path = bundle/easy-align
 	url = https://github.com/junegunn/vim-easy-align.git
+[submodule "bundle/shim"]
+	path = bundle/shim
+	url = https://github.com/vim-scripts/Superior-Haskell-Interaction-Mode-SHIM
