@@ -20,7 +20,7 @@ set lines=40
 set autoindent
 set smartindent
 set columns=110
-set guifont=Monaco\ for\ Powerline:h13
+set guifont=Monaco\ for\ Powerline:h11
 let mapleader=','
 nmap <leader>a :EasyAlign<CR>
 vmap <leader>a :EasyAlign!<CR>
@@ -30,6 +30,10 @@ nmap <leader>. :b#<CR>
 map <C-Tab> :bn<cr>
 map <S-C-Tab> :bp<cr>
 let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
+
+" Set backupdir to .backup
+set backupdir=~/.backup,.
+set directory=~/.backup,.
 " Set tab behaviour
 set ts=4 sts=4 sw=4 noexpandtab
 
@@ -100,6 +104,7 @@ if has("autocmd")
   autocmd FileType haskell vmap <C-c><C-l> :GhciRange<CR>
   autocmd FileType haskell nmap <C-c><C-f> :GhciFile<CR>
   autocmd FileType haskell nmap <C-c><C-r> :GhciReload<CR>
+
 
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
@@ -190,3 +195,8 @@ endfunction
 " Synastic defaults
 let g:syntastic_check_on_open=1
 let g:syntastic_python_checkers=['pep8']
+
+autocmd FileType haskell nmap <C-c><C-l> :GhciRange<CR>
+autocmd FileType haskell vmap <C-c><C-l> :GhciRange<CR>
+autocmd FileType haskell nmap <C-c><C-f> :GhciFile<CR>
+autocmd FileType haskell nmap <C-c><C-r> :GhciReload<CR>
