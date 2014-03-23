@@ -1,7 +1,6 @@
 " Pathogen calls
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
-
 " Personal preferences
 colorscheme grb256
 set background=dark
@@ -75,6 +74,9 @@ function! SummarizeTabs()
     echohl None
   endtry
 endfunction
+
+" Set .tex to latex
+let g:tex_flavor='latex'
 
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
