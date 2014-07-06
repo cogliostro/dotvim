@@ -70,3 +70,6 @@
 [submodule "bundle/vim-markdown"]
 	path = bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "bundle/hasksyn"]
+	path = bundle/hasksyn
+	url = git://github.com/travitch/hasksyn.git
