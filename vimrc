@@ -2,7 +2,8 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 " Personal preferences
-colorscheme grb256
+colorscheme atom-dark
+set transparency=0
 set background=dark
 set encoding=utf-8
 set cmdheight=1
@@ -10,7 +11,7 @@ let g:netrw_keepdir=0
 set guioptions=-t
 syntax on
 set nocompatible
-set cursorline
+" set cursorline
 filetype plugin indent on
 set incsearch
 set hidden
@@ -19,8 +20,10 @@ set lines=40
 set autoindent
 set smartindent
 set columns=110
-set guifont=Monaco\ for\ Powerline:h11
+set guifont=Menlo\ for\ Powerline:h11
 let mapleader=','
+imap <Tab> <Plug>snipMateNextOrTrigger
+smap <Tab> <Plug>snipMateNextOrTrigger
 nmap <leader>a :EasyAlign<CR>
 vmap <leader>a :EasyAlign!<CR>
 nmap <leader>t :Tlist<CR>
@@ -176,7 +179,7 @@ let g:ghcmod_ghc_options = ['-fno-warn-type-defaults']
 set laststatus=2
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme="powerlineish"
+let g:airline_theme="dark"
 let g:airline#extensions#syntastic#enabled = 1
 
 nnoremap <leader>h :!open %<CR><CR>
@@ -202,3 +205,9 @@ autocmd FileType haskell nmap <C-c><C-l> :GhciRange<CR>
 autocmd FileType haskell vmap <C-c><C-l> :GhciRange<CR>
 autocmd FileType haskell nmap <C-c><C-f> :GhciFile<CR>
 autocmd FileType haskell nmap <C-c><C-r> :GhciReload<CR>
+
+" vimwiki defaults
+let g:vimwiki_list = [{'path':'~/Dropbox/vimwiki', 'path_html':'~/Documents/export/html/'}]
+imap <C-j> <Plug>snipMateNextOrTrigger
+smap <C-j> <Plug>snipMateNextOrTrigger
+
