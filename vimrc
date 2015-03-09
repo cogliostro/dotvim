@@ -16,10 +16,8 @@ filetype plugin indent on
 set incsearch
 set hidden
 set nu
-set lines=40
 set autoindent
 set smartindent
-set columns=110
 set guifont=Menlo\ for\ Powerline:h11
 let mapleader=','
 imap <Tab> <Plug>snipMateNextOrTrigger
