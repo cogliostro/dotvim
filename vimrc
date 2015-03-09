@@ -3,7 +3,7 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 " Personal preferences
 colorscheme atom-dark
-set transparency=0
+" set transparency=0
 set background=dark
 set encoding=utf-8
 set cmdheight=1
@@ -92,7 +92,6 @@ if has("autocmd")
    
   " Customisations based on house-style (arbitrary)
   autocmd BufEnter,BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
-  autocmd FileType hs setlocal ts=4 sts=4 sw=4 expandtab smarttab shiftround nojoinspaces
   autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType html nnoremap <F5> :!open -a Safari %<CR><CR>
@@ -103,14 +102,6 @@ if has("autocmd")
   autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
   autocmd FileType eruby.html setlocal ts=2 sts=2 sw=2 expandtab
   
-  " Haskell customization
-  autocmd FileType haskell setlocal ts=8 expandtab sts=4 sw=4 smarttab shiftround nojoinspaces
-  autocmd FileType haskell nmap <C-c><C-l> :GhciRange<CR>
-  autocmd FileType haskell vmap <C-c><C-l> :GhciRange<CR>
-  autocmd FileType haskell nmap <C-c><C-f> :GhciFile<CR>
-  autocmd FileType haskell nmap <C-c><C-r> :GhciReload<CR>
-
-
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 endif
@@ -125,55 +116,6 @@ function! HandleURL()
   endif
 endfunction
 map <leader>w :call HandleURL()<cr>
-
-" use ghc functionality for haskell files
-au Bufenter *.hs compiler ghc
-
-" Configure browser for haskell_doc.vim
-let g:haddock_browser = "open"
-let g:haddock_browser_callformat = "%s -a Firefox %s"
-
-"
-" Haskell settings
-"
-
-let s:width = 80
-
-function! HaskellModuleSection(...)
-    let name = 0 < a:0 ? a:1 : inputdialog("Section name: ")
-
-    return  repeat('-', s:width) . "\n"
-    \       . "--  " . name . "\n"
-    \       . "\n"
-
-endfunction
-
-nmap <silent> --s "=HaskellModuleSection()<CR>gp
-
-let s:width = 80
-
-
-function! HaskellModuleHeader(...)
-    let name = 0 < a:0 ? a:1 : inputdialog("Module: ")
-    let note = 1 < a:0 ? a:2 : inputdialog("Note: ")
-    let description = 2 < a:0 ? a:3 : inputdialog("Describe this module: ")
-    
-    return  repeat('-', s:width) . "\n" 
-    \       . "-- | \n" 
-    \       . "-- Module      : " . name . "\n"
-    \       . "-- Note        : " . note . "\n"
-    \       . "-- \n"
-    \       . "-- " . description . "\n"
-    \       . "-- \n"
-    \       . repeat('-', s:width) . "\n"
-    \       . "\n"
-
-endfunction
-
-
-nmap <silent> --h "=HaskellModuleHeader()<CR>:0put =<CR>
-
-let g:ghcmod_ghc_options = ['-fno-warn-type-defaults']
 
 " Airline options
 set laststatus=2
@@ -200,11 +142,6 @@ endfunction
 " Synastic defaults
 let g:syntastic_check_on_open=1
 let g:syntastic_python_checkers=['pep8']
-
-autocmd FileType haskell nmap <C-c><C-l> :GhciRange<CR>
-autocmd FileType haskell vmap <C-c><C-l> :GhciRange<CR>
-autocmd FileType haskell nmap <C-c><C-f> :GhciFile<CR>
-autocmd FileType haskell nmap <C-c><C-r> :GhciReload<CR>
 
 " vimwiki defaults
 let g:vimwiki_list = [{'path':'~/Dropbox/vimwiki', 'path_html':'~/Documents/export/html/'}]
