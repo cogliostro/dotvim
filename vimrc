@@ -18,7 +18,7 @@ set hidden
 set nu
 set autoindent
 set smartindent
-set guifont=Menlo\ for\ Powerline:h11
+set guifont=Menlo\ for\ Powerline\ 11
 let mapleader=','
 imap <Tab> <Plug>snipMateNextOrTrigger
 smap <Tab> <Plug>snipMateNextOrTrigger
