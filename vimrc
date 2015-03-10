@@ -24,8 +24,8 @@ imap <Tab> <Plug>snipMateNextOrTrigger
 smap <Tab> <Plug>snipMateNextOrTrigger
 nmap <leader>a :EasyAlign<CR>
 vmap <leader>a :EasyAlign!<CR>
-nmap <leader>t :Tlist<CR>
-nmap <leader>n :NERDTreeToggle<CR>
+nmap <leader>t :TagbarToggle<CR>
+nmap <leader>n :NERDTree<CR>
 nmap <leader>. :b#<CR>
 map <C-Tab> :bn<cr>
 map <S-C-Tab> :bp<cr>
@@ -142,7 +142,7 @@ let g:syntastic_check_on_open=1
 let g:syntastic_python_checkers=['pep8']
 
 " vimwiki defaults
-let g:vimwiki_list = [{'path':'~/Dropbox/vimwiki', 'path_html':'~/Documents/export/html/'}]
+let g:vimwiki_list = [{'path':'~/Dropbox/vimwiki', 'path_html':'~/Dropbox/vimwiki_html/'}]
 imap <C-j> <Plug>snipMateNextOrTrigger
 smap <C-j> <Plug>snipMateNextOrTrigger
 
