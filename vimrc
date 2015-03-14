@@ -19,6 +19,9 @@ set nu
 set autoindent
 set smartindent
 set guifont=Menlo\ for\ Powerline\ 11
+if has("gui_macvim")
+	set guifont=Menlo\ for\ Powerline\:h11
+endif
 let mapleader=','
 imap <Tab> <Plug>snipMateNextOrTrigger
 smap <Tab> <Plug>snipMateNextOrTrigger
