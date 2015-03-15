@@ -18,15 +18,18 @@ set hidden
 set nu
 set autoindent
 set smartindent
-set guifont=Menlo\ for\ Powerline\ 11
+
 if has("gui_macvim")
 	set guifont=Menlo\ for\ Powerline\:h11
+else
+	set guifont=Menlo\ for\ Powerline\ 11
 endif
+
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
 let mapleader=','
-imap <Tab> <Plug>snipMateNextOrTrigger
-smap <Tab> <Plug>snipMateNextOrTrigger
-nmap <leader>a :EasyAlign<CR>
-vmap <leader>a :EasyAlign!<CR>
 nmap <leader>t :TagbarToggle<CR>
 nmap <leader>n :NERDTree<CR>
 nmap <leader>. :b#<CR>
@@ -146,6 +149,3 @@ let g:syntastic_python_checkers=['pep8']
 
 " vimwiki defaults
 let g:vimwiki_list = [{'path':'~/Dropbox/vimwiki', 'path_html':'~/Dropbox/vimwiki_html/'}]
-imap <C-j> <Plug>snipMateNextOrTrigger
-smap <C-j> <Plug>snipMateNextOrTrigger
-
