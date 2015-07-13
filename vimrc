@@ -21,6 +21,7 @@ set smartindent
 
 if has("gui_macvim")
 	set guifont=Menlo\ for\ Powerline\:h11
+	let g:livepreview_previewer = 'open -a Preview'
 else
 	set guifont=Menlo\ for\ Powerline\ 11
 endif
