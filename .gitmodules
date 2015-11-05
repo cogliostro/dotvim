@@ -19,9 +19,6 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "bundle/vimwiki"]
-	path = bundle/vimwiki
-	url = https://github.com/vim-scripts/vimwiki
 [submodule "bundle/tlib_vim"]
 	path = bundle/tlib_vim
 	url = https://github.com/tomtom/tlib_vim.git
@@ -61,3 +58,6 @@
 [submodule "bundle/vim-latex-live-preview"]
 	path = bundle/vim-latex-live-preview
 	url = https://github.com/xuhdev/vim-latex-live-preview.git
+[submodule "bundle/vimwiki"]
+	path = bundle/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git
