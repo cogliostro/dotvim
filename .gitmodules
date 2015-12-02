@@ -61,3 +61,6 @@
 [submodule "bundle/vimwiki"]
 	path = bundle/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
+[submodule "bundle/vimblog"]
+	path = bundle/vimblog
+	url = https://github.com/danielmiessler/VimBlog
