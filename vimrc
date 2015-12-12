@@ -2,8 +2,8 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 " Personal preferences
-colorscheme atom-dark
 " set transparency=0
+colorscheme atom-dark-256
 set background=dark
 set encoding=utf-8
 set cmdheight=1
@@ -18,6 +18,16 @@ set hidden
 set nu
 set autoindent
 set smartindent
+
+if has("gui_running")
+	colorscheme atom-dark
+	" Airline options
+	set laststatus=2
+	let g:airline_powerline_fonts=1
+	let g:airline#extensions#tabline#enabled = 1
+	let g:airline_theme="dark"
+	let g:airline#extensions#syntastic#enabled = 1
+endif
 
 if has("gui_macvim")
 	set guifont=Menlo\ for\ Powerline\:h11
@@ -122,13 +132,6 @@ function! HandleURL()
   endif
 endfunction
 map <leader>w :call HandleURL()<cr>
-
-" Airline options
-set laststatus=2
-let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme="dark"
-let g:airline#extensions#syntastic#enabled = 1
 
 nnoremap <leader>h :!open %<CR><CR>
 
