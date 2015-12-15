@@ -4,6 +4,7 @@ call pathogen#helptags()
 " Personal preferences
 " set transparency=0
 " colorscheme atom-dark-256
+set t_Co=256
 let g:zenburn_high_Contrast=1
 let g:zenburn_force_dark_Background=1
 colorscheme zenburn
@@ -120,6 +121,7 @@ if has("autocmd")
   autocmd FileType rb setlocal ts=2 sts=2 sw=2 expandtab
   autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
   autocmd FileType eruby.html setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd BufRead,BufNewFile *.wiki setlocal spell spelllang=nb
   
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
