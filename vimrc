@@ -3,7 +3,10 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 " Personal preferences
 " set transparency=0
-colorscheme atom-dark-256
+" colorscheme atom-dark-256
+let g:zenburn_high_Contrast=1
+let g:zenburn_force_dark_Background=1
+colorscheme zenburn
 set background=dark
 set encoding=utf-8
 set cmdheight=1
