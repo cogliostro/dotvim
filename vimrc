@@ -3,7 +3,6 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 " Personal preferences
 " set transparency=0
-" colorscheme atom-dark-256
 set t_Co=256
 let g:zenburn_high_Contrast=1
 let g:zenburn_force_dark_Background=1
@@ -31,6 +30,8 @@ if has("gui_running")
 	let g:airline#extensions#tabline#enabled = 1
 	let g:airline_theme="dark"
 	let g:airline#extensions#syntastic#enabled = 1
+else
+	let g:loaded_airline=0
 endif
 
 if has("gui_macvim")
@@ -38,6 +39,7 @@ if has("gui_macvim")
 	let g:livepreview_previewer = 'open -a Preview'
 else
 	set guifont=Menlo\ for\ Powerline\ 11
+	let g:livepreview_previewer = 'zathura'
 endif
 
 let g:UltiSnipsExpandTrigger="<c-j>"
@@ -121,7 +123,7 @@ if has("autocmd")
   autocmd FileType rb setlocal ts=2 sts=2 sw=2 expandtab
   autocmd BufRead,BufNewFile *.erb set filetype=eruby.html
   autocmd FileType eruby.html setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd BufRead,BufNewFile *.wiki setlocal spell spelllang=nb
+  autocmd BufRead,BufNewFile *.wiki setlocal spell spelllang=nb spellfile=~/.vim/spell/nb.utf-8.add spellfile+=~/.vim/spell/oneoff.utf-8.add
   
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
