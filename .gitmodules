@@ -64,3 +64,6 @@
 [submodule "bundle/vimblog"]
 	path = bundle/vimblog
 	url = https://github.com/danielmiessler/VimBlog
+[submodule "bundle/vim-auto-save"]
+	path = bundle/vim-auto-save
+	url = https://github.com/vim-scripts/vim-auto-save.git

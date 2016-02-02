@@ -55,8 +55,8 @@ map <S-C-Tab> :bp<cr>
 let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
 
 " Set backupdir to .backup
-set backupdir=~/.backup,.
-set directory=~/.backup,.
+set backupdir=~/.backup//,.
+set directory=~/.backup//,.
 " Set tab behaviour
 set ts=4 sts=4 sw=4 noexpandtab
 
